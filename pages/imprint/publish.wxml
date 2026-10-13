@@ -1,0 +1,86 @@
+<!-- publish.wxml -->
+<view class="container">
+  <!-- 顶部导航栏 -->
+  <view class="nav-bar">
+    <text class="nav-btn nav-left" bindtap="goBack">取消</text>
+    <text class="nav-title">发布家乡印记</text>
+    <text class="nav-btn nav-right" bindtap="saveDraft">草稿</text>
+  </view>
+  
+  <form bindsubmit="submitForm">
+    <!-- 表单容器 -->
+    <view class="form-container">
+      <!-- 标题输入框 -->
+    <view class="form-item">
+      <text class="label required">标题</text>
+      <view class="input-wrapper">
+        <input class="input" name="title" placeholder="请输入标题（1-20字）" maxlength="20" bindinput="titleInput" />
+        <text class="word-count">{{formData.title.length}}/20</text>
+      </view>
+    </view>
+
+    <!-- 内容输入框 -->
+    <view class="form-item">
+      <text class="label required">内容</text>
+      <view class="textarea-wrapper">
+        <textarea class="textarea" name="content" placeholder="请输入内容" maxlength="500" bindinput="contentInput" />
+        <text class="word-count">{{formData.content.length}}/500</text>
+      </view>
+    </view>
+
+    <!-- 类型选择 -->
+    <view class="form-item">
+      <text class="label required">类型</text>
+      <picker bindchange="typeChange" value="{{formData.typeIndex}}" range="{{typeList}}" range-key="name">
+        <view class="picker">
+          {{selectedTypeText}}
+          <text class="picker-hint">点击选择类型</text>
+        </view>
+      </picker>
+    </view>
+
+    <!-- 图片上传区域 -->
+    <view class="form-item">
+      <text class="label">照片</text>
+      <text class="hint">最多上传9张照片</text>
+      <view class="uploader">
+        <view class="uploader-item" wx:for="{{formData.images}}" wx:key="index">
+          <image src="{{item}}" mode="aspectFill"></image>
+          <view class="delete-btn" bindtap="deleteImage" data-index="{{index}}">×</view>
+          <view class="image-index">{{index + 1}}/9</view>
+        </view>
+        <view class="uploader-item add" wx:if="{{formData.images.length < 9}}" bindtap="chooseImage">
+          <text>+</text>
+          <text class="add-text">添加照片</text>
+        </view>
+      </view>
+    </view>
+      
+      <!-- 表单提示区 -->
+    <view class="form-tips">
+      <view class="tip-item">
+        <text class="tip-icon">💡</text>
+        <text class="tip-text">请确保内容真实有效，不得发布虚假信息</text>
+      </view>
+      <view class="tip-item">
+        <text class="tip-icon">📝</text>
+        <text class="tip-text">请遵守相关法律法规，文明发言</text>
+      </view>
+      <view class="tip-item">
+        <text class="tip-icon">⚠️</text>
+        <text class="tip-text">禁止发布广告、暴力、色情等违法违规内容</text>
+      </view>
+    </view>
+    </view>
+    
+    <!-- 底部占位，确保内容不被提交按钮遮挡 -->
+    <view class="bottom-space"></view>
+  </form>
+  
+  <!-- 固定的提交按钮容器 -->
+  <view class="submit-container">
+    <button class="submit-btn" bindtap="submitForm" loading="{{loading}}" disabled="{{!canSubmit}}">
+      <text class="submit-text">{{loading ? '发布中...' : '发布印记'}}</text>
+    </button>
+  </view>
+</view>

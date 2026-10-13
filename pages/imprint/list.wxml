@@ -1,0 +1,61 @@
+<!-- list.wxml -->
+<view class="container">
+  <!-- 顶部导航栏 -->
+  <view class="navbar">
+    <text class="title">家乡印记</text>
+    <!-- 简化的发布按钮 -->
+    <view class="publish-btn" bindtap="navigateToPublish">发布</view>
+  </view>
+
+  <!-- 主滚动区域 -->
+  <scroll-view scroll-y="true" class="scroll-container" wx:if="{{!loading}}">
+    <!-- 热门印记 -->
+    <view class="hot-section">
+      <view class="section-header">
+        <text class="section-title">热门印记</text>
+      </view>
+      <scroll-view scroll-x="true" class="hot-scroll">
+        <view class="hot-item" wx:for="{{hotImprints}}" wx:key="_id" bindtap="navigateToDetail" data-id="{{item._id}}">
+          <image class="hot-image" src="{{item.images[0]}}" mode="aspectFill"></image>
+          <view class="hot-content">
+            <text class="hot-title">{{item.title}}</text>
+            <text class="hot-type">{{item.type.name}}</text>
+            <view class="hot-footer">
+              <text class="hot-likes">{{item.likeCount}} 赞</text>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+
+    <!-- 所有印记列表 -->
+    <view class="list-section">
+      <view class="section-header">
+        <text class="section-title">最新印记</text>
+      </view>
+      <view class="imprint-list">
+        <view class="imprint-item" wx:for="{{imprints}}" wx:key="_id" bindtap="navigateToDetail" data-id="{{item._id}}">
+          <image class="item-image" src="{{item.images[0]}}" mode="aspectFill"></image>
+          <view class="item-content">
+            <text class="item-title">{{item.title}}</text>
+            <text class="item-type">{{item.type.name}}</text>
+            <view class="item-footer">
+              <text class="item-likes">{{item.likeCount}} 赞</text>
+              <text class="item-time">{{item.createTimeFormat}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!-- 空状态 -->
+      <view class="empty" wx:if="{{imprints.length === 0}}">
+        <text>暂无印记，快去发布第一个吧！</text>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 加载提示 -->
+  <view class="loading" wx:if="{{loading}}">
+    <text>加载中...</text>
+  </view>
+</view>

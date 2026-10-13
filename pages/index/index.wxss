@@ -1,0 +1,150 @@
+/**index.wxss**/
+.sv{
+  border:1px solid black ;
+  height: 700px;
+  width: auto;
+}
+
+.container1{
+  width: auto;
+  height: 70px;
+  padding: 20px;
+  background-color: rgb(189, 188, 236);
+  border:black solid 1px;
+}
+.hd{
+  font-size: 28px;
+  text-align: center;
+}
+.container2{
+  width: auto;
+  height: 580px;
+  padding: 20px;
+  background-color: rgb(189, 188, 236);
+  border:black solid 1px;
+}
+.p1{
+  width: 345px ;
+}
+.container3{
+  width: auto;
+  height: 620px;
+  padding: 20px;
+  background-color: rgb(189, 188, 236);
+  border:black solid 1px;
+}
+
+.container4{
+  width: auto;
+  height: 300px;
+  padding: 20px;
+  background-color: rgb(189, 188, 236);
+  border:black solid 1px;
+}
+.container5{
+  width: auto;
+  height: 610px;
+  padding: 20px;
+  background-color: rgb(189, 188, 236);
+  border:black solid 1px;
+}
+.container6{
+  width: auto;
+  height: 780px;
+  padding: 20px;
+  background-color: rgb(189, 188, 236);
+  border:black solid 1px;
+}
+.container7{
+  width: auto;
+  height: 600px;
+  padding: 20px;
+  background-color: rgb(189, 188, 236);
+  border:black solid 1px;
+}
+.containermusic{
+  width: auto;
+  height: auto ;
+  min-height: 120px;
+  padding: 20px;
+  background-color: rgb(189, 188, 236);
+  border:black solid 1px;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.time-text {
+  font-size: 12px;
+  color: #333;
+  width: 45px;
+  text-align: center;
+}
+
+.progress-slider {
+  flex: 1;
+  margin: 0 10px;
+}
+button{
+  margin: 10rpx;
+}
+.containerswiper{
+  height: 300px;
+}
+
+.containervidio{
+  width: auto;
+  border-radius: 10rpx;
+  overflow: hidden;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+  margin-bottom: 30rpx;
+  height: 400px;
+  padding: 20px;
+  background-color: rgb(189, 188, 236);
+  border:black solid 1px;
+}
+
+/* 家乡印记模块入口样式 */
+.imprint-entry {
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.imprint-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1aad19;
+  color: white;
+  border-radius: 50rpx;
+  padding: 20rpx 40rpx;
+  border: none;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.imprint-btn:hover {
+  background-color: #179b16;
+  box-shadow: 0 6rpx 16rpx rgba(0, 0, 0, 0.2);
+}
+
+.imprint-icon {
+  font-size: 32rpx;
+  margin-right: 10rpx;
+}
+
+.imprint-text {
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.imprint-arrow {
+  font-size: 28rpx;
+  margin-left: 10rpx;
+}
+

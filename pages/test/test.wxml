@@ -1,0 +1,10 @@
+<!-- test.wxml -->
+<view class="container">
+  <view class="test-title">测试页面</view>
+  <view class="test-section">
+    <text class="test-label">测试发布页面跳转：</text>
+    <view class="test-buttons">
+      <view class="test-btn" bindtap="testNavigateToPublish">跳转到发布页面</view>
+    </view>
+  </view>
+</view>

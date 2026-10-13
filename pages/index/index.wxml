@@ -1,0 +1,99 @@
+<!--index.wxml-->
+<navigation-bar title="我的家乡" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+<scroll-view class="sv" scroll-y>
+<view class="container1">
+<text class="hd">香格里拉：</text>
+<text class="hd">尘世中的净土，心灵的归宿</text>
+</view>
+<view class="containermusic">
+      <audio id="myAudio" poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" controls bindtimeupdate="updateProgress" loop> </audio>
+      
+      <!-- 进度条 -->
+      <view class="progress-container">
+        <text class="time-text">{{currentTimeFormat}}</text>
+        <slider 
+          class="progress-slider"
+          min="0" 
+          max="100" 
+          value="{{progress}}" 
+          activeColor="#1aad19" 
+          backgroundColor="#d9d9d9"
+          block-size="12"
+          bindchange="onSliderChange"
+        />
+        <text class="time-text">{{durationFormat}}</text>
+      </view>
+      
+      <button size='mini' bindtap='audioPlay'>播放</button>
+      <button size='mini' bindtap='audioPause'>暂停</button>
+      <button size='mini' bindtap='audioSeek0'>回到开头</button>
+</view>
+<view class="container2">
+<text> “太阳最早照耀的地方，是东方的建塘；人间最殊胜的净土，是奶子河畔的香格里拉”。香格里拉，藏语意为 “心中的日月”，它宛如一颗璀璨的明珠，镶嵌在云南省西北部、青藏高原东南缘的横断山脉腹地，是滇、川、藏大三角交汇地带的重要枢纽。\n</text>
+<image src="/image/1.jpeg" mode="widthFix" class="p1"></image>
+</view>
+<view class="container3">
+<text>
+香格里拉的自然景观堪称一绝，这里是 “三江并流” 世界自然遗产的重要组成部分。金沙江、澜沧江、怒江三条巨龙在崇山峻岭间并肩奔腾，气势磅礴。雪山更是香格里拉的标志性景观，海拔 4000 米以上的雪山就有 47 座。哈巴雪山银峰皑皑，与玉龙雪山隔虎跳峡相望；巴拉格宗雪山雄伟壮丽，以绝世之姿刺破苍穹；石卡雪山在阳光下闪耀着圣洁的光芒，宛如天神的城堡。</text>
+<image src="/image/2.jpg" mode="widthFix" class="p1"></image>
+<image src="/image/R3.jpg" mode="widthFix" class="p1"></image>
+</view>
+<view class="container4">
+<text>普达措国家公园则是香格里拉自然美景的集大成者。这里森林茂密、湖泊清澈、草甸如茵，四季景色各异。春天，漫山遍野的杜鹃花竞相开放，五彩斑斓；夏天，草原上绿草如茵，牛羊成群；秋天，山林被染成金黄色和红色，如诗如画；冬天，整个公园银装素裹，静谧而美好。
+</text>
+<swiper indicator-dots="true" autoplay="true" interval="3000">
+<swiper-item class='containerswiper'>
+  <image src="/image/4.jpg" mode="widthFix" class="p1"></image>
+</swiper-item>
+<swiper-item>
+  <image src="/image/5.jpg" mode="widthFix" class="p1"></image>
+</swiper-item>
+</swiper>
+
+</view>
+<view class="container5">
+<text>纳帕海湿地也是香格里拉不可错过的自然景观之一。它是候鸟栖息越冬的天堂，每年秋冬季节，斑头雁、黑颈鹤等大量候鸟在此觅食、栖息。5 月的纳帕海水草渐丰，吸引着成群的牦牛马匹；8 月，高山草甸铺满紫色鸢尾花；10 月，狼毒花的艳红将整个湿地点燃，构成了一幅幅美丽的风景画。
+</text>
+<image src="/image/6.jpg" mode="widthFix" class="p1"></image>
+<image src="/image/7.jpg" mode="widthFix" class="p1"></image>
+</view>
+<view class="container6">
+<text>除了自然美景，香格里拉还拥有深厚的历史文化底蕴。独克宗古城是茶马古道上的重要枢纽，已有 1300 多年的历史。当年建城时，工匠以当地白色黏土将民居外墙涂成白色，夜晚在月光下，古城分外动人，因此被称为 “月光之城”。古城内的道路、藏式民居大多以大龟山为中心向四面八方呈放射状，形似盛开的八瓣莲花。漫步在古城的青石板路上，仿佛能听到千余年前的马蹄声，感受到当年茶马互市的繁华。\n噶丹・松赞林寺是云南省规模最大的藏传佛教寺院，被誉为 “小布达拉宫”。它坐落在香格里拉市的佛屏山麓，远远望去，红墙金顶，金碧辉煌。寺内供奉着众多栩栩如生的佛像和佛塔，庄严肃穆的氛围让人心灵得到净化。站在寺内高处，俯瞰整个香格里拉市，远处的雪山、草原、湖泊尽收眼底，松赞林寺如同一座精神的灯塔，照亮这片土地。
+</text>
+<image src="/image/8.jpg" mode="widthFix" class="p1"></image>
+<image src="/image/9.jpg" mode="widthFix" class="p1"></image>
+</view>
+<view class="container7">
+<text>在香格里拉，还能领略到多彩的民族风情。这里居住着藏族、纳西族、汉族等 25 个民族，各民族和谐共处，文化相互交融。藏族的雪顿节、纳西族的三朵节等传统节日，都充满了浓郁的民族特色。人们身着盛装，举行朝拜、歌舞表演、赛马等活动，整个香格里拉都沉浸在欢乐的氛围中。
+此外，香格里拉还是一座不朽的红色丰碑。红二、六军团曾在此与藏族同胞结下深厚情谊，贺龙将军赠予归化寺的 “兴盛番族” 锦幛，至今仍诉说着那段峥嵘岁月。
+香格里拉，这片被遗落在人间的净土，以其壮美的自然景观、深厚的历史文化、多彩的民族风情，吸引着无数人前来探寻。它不仅是一个地理坐标，更是人们灵魂深处永恒追寻的诗与远方，无论你是渴望亲近自然，还是追寻心灵的宁静，香格里拉都能给你带来无与伦比的体验。
+</text>
+<image src="/image/10.jpg" mode="widthFix" class="p1"></image>
+</view>
+<view class="containervidio">
+  <video 
+      id="myVideo" 
+      src="https://xgdst.nwpu.edu.cn/__local/D/83/A2/C45101C4814FF8DA273F8DCE59C_FB538A50_46F1E270.mp4" 
+      controls="{{true}}" 
+      autoplay="{{false}}" 
+      loop="{{false}}" 
+      binderror="videoErrorCallback"
+      class="video-player">
+    </video>
+    <view class="control-panel">
+    <button class="control-btn" bindtap="playVideo">播放</button>
+    <button class="control-btn" bindtap="pauseVideo">暂停</button>
+    <button class="control-btn" bindtap="replayVideo">重新播放</button>
+    <text>（实在没有视频资源，示例视频代替下）</text>
+  </view>
+</view>
+  
+  <!-- 家乡印记模块入口 -->
+  <view class="imprint-entry">
+    <button class="imprint-btn" bindtap="navigateToImprint">
+      <text class="imprint-icon">🏞️</text>
+      <text class="imprint-text">家乡印记</text>
+      <text class="imprint-arrow">→</text>
+    </button>
+  </view>
+</scroll-view>

@@ -1,0 +1,46 @@
+<!-- detail.wxml -->
+<view class="container">
+  <!-- 加载提示 -->
+  <view class="loading" wx:if="{{loading}}">
+    <text>加载中...</text>
+  </view>
+
+  <!-- 印记详情 -->
+  <view class="detail" wx:if="{{!loading && imprint}}">
+    <!-- 标题区域 -->
+    <view class="header">
+      <text class="title">{{imprint.title}}</text>
+      <view class="meta">
+        <text class="type">{{imprint.type.name}}</text>
+        <text class="time">{{imprint.createTimeFormat}}</text>
+      </view>
+    </view>
+
+    <!-- 图片区域 -->
+    <scroll-view scroll-x="true" class="image-scroll" wx:if="{{imprint.images.length > 0}}">
+      <view class="image-wrapper">
+        <image class="image" wx:for="{{imprint.images}}" wx:key="index" src="{{item}}" mode="aspectFill"></image>
+      </view>
+    </scroll-view>
+
+    <!-- 内容区域 -->
+    <view class="content">
+      <text>{{imprint.content}}</text>
+    </view>
+
+    <!-- 操作按钮 -->
+    <view class="actions">
+      <button class="like-btn" bindtap="likeImprint">
+        <text class="like-icon">{{isLiked ? '❤️' : '🤍'}}</text>
+        <text class="like-count">{{imprint.likeCount}}</text>
+      </button>
+      <button class="delete-btn" wx:if="{{canDelete}}" bindtap="confirmDelete">
+        <text class="delete-icon">🗑️</text>
+        <text>删除</text>
+      </button>
+    </view>
+  </view>
+
+  <!-- 返回按钮 -->
+  <button class="back-btn" bindtap="navigateBack">返回</button>
+</view>
